@@ -1,0 +1,261 @@
+/* Import Google Font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  background: rgb(37, 37, 41);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  box-shadow: 0px 0px 5px 1px rgb(75, 75, 75);
+  border-radius: 10px;
+  padding: 8px 5px;
+  background: rgb(224, 224, 224);
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+  gap: 15px;
+}
+
+.add-box {
+  width: 245px;
+  height: 245px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgb(138, 91, 247);
+  cursor: pointer;
+}
+
+.add-box .icon {
+  background: white;
+  color: rgb(138, 91, 247);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+
+}
+
+.add-box span {
+  color: rgb(212, 212, 212);
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.note {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  transition: all 0.3s;
+}
+
+.note .details {
+  width: 100%;
+  height: 82%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.note .details .note-name {
+  font-weight: bold;
+  padding-bottom: 5px;
+  color: rgb(34, 34, 34);
+  border-bottom: 1px solid rgb(179, 179, 179);
+  margin-bottom: 5px;
+}
+
+.note .details span .note-description {
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.note .bottom-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 2px rgb(155, 155, 155);
+  background: rgb(54, 54, 54);
+}
+
+.note .bottom-content .note-date {
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  color: white;
+}
+
+.note .bottom-content .controls {
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 17px;
+  color: white;
+  position: relative;
+}
+
+.note .bottom-content .controls .note-control{
+    position: absolute;
+    left: -110px;
+    top: -70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    min-width: 100px;
+    border-radius: 5px;
+    padding: 5px 3px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+    transition: all 0.3s;
+}
+
+.note .bottom-content .controls .note-control.show{
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+}
+
+.note .bottom-content .controls .note-control button{
+  background: white;
+  border: none;
+  display: flex;
+  width: 100%;
+  padding: 10px 5px;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.note .bottom-content .controls .note-control button:hover{
+  background: rgb(236, 236, 236);
+}
+
+.container-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(37, 37, 41, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(500px);
+  transition: all 0.3s;
+}
+
+.container-popup.show{
+  opacity: 1;
+  pointer-events: visible;
+  transform: translateX(0px);
+}
+
+.popup-box{
+  background: white;
+  min-width: 350px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 300px 0;
+  transition: all 0.3s;
+}
+
+.popup-title{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(179, 179, 179);
+  padding: 5px 5px 8px 5px;
+}
+
+.popup-title .btn-close-popup{
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.popup-title .btn-close-popup:hover{
+  transform: rotate(-90deg);
+}
+
+#form-content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.form-group{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  gap: 6px;
+}
+
+.form-group label{
+  color: rgb(37, 37, 41);
+  font-size: 15px;
+}
+
+.form-group input, .form-group textarea{
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid rgb(179, 179, 179);
+  outline: none;
+}
+
+#form-content .btn-add-note{
+  width: 95%;
+  margin: 10px auto 5px auto;
+  padding: 17px 0;
+  outline: none;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(212, 212, 212);
+  background: rgb(138, 91, 247);
+  color: white;
+  cursor: pointer;
+}
